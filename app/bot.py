@@ -14,6 +14,7 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 from predict import predict_answer
+import os
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 hf_path = "Eka-Korn/distillbert-qa-tuned-lora_1.01_v2"
@@ -62,7 +63,6 @@ async def process_cancel_command_state(message: Message, state: FSMContext):
     )
     await state.clear()
 
-
 @dp.message(Command(commands='answer'), StateFilter(default_state))
 async def process_answer_command(message: Message, state: FSMContext):
 	await message.answer('Пришлите контекст Вашего вопроса')
@@ -98,7 +98,7 @@ async def warning_not_question(message: Message):
             'отправьте команду /cancel'
     )
 
-@dp.message(Command(commands='make_answer'), StateFilter(FSMFillForm.question))
+@dp.message(Command(commands='make_answer'), StateFilter(default_state))
 async def make_answer(message: Message, state: FSMContext):
 	if message.from_user.id in user_dict:
 		await message.answer(text='Пожалуйста, пожождите.')
