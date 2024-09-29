@@ -58,7 +58,7 @@ def postprocess(batch, output, tokenizer, **kwargs):
 
     return np.array([postprocessed_output[i][0] for i in range(b_size)])
 
-def predict(model, tokenizer, question, context, device):
+def predict_answer(model, tokenizer, question, context, device):
     inputs = tokenizer(question.strip(), context.strip(), max_length=512, truncation=True, padding="max_length")
     for key in inputs:
         inputs[key] = torch.tensor(inputs[key], dtype=torch.int64).unsqueeze(0)
