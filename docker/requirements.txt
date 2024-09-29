@@ -1,3 +1,5 @@
-torch==2.2.0
-torchvision==0.17.0
+torch==2.2.1
 aiogram==3.3.0
+peft==0.13.0
+transformers==4.45.1
+numpy==1.22.4
