@@ -1,4 +1,4 @@
-# (QAcumber)[https://t.me/ru_qa_bot] - tg bot for Russian Question answering 
+# [QAcumber](https://t.me/ru_qa_bot) - tg bot for Russian Question answering 
 
 ![Logo](images.jpeg "QAcumber logo")
 
