@@ -17,7 +17,7 @@ import os
 
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-hf_path = "Eka-Korn/distillbert-qa-tuned-lora_1.01_v2"
+hf_path = os.environ.get('MODEL_PATH')
 config = LoraConfig.from_pretrained(hf_path)
 model = AutoModelForQuestionAnswering.from_pretrained(config.base_model_name_or_path)
 model = PeftModel.from_pretrained(model, hf_path).to(device)

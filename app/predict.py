@@ -4,9 +4,9 @@ from functools import partial
 
 
 def retrieve_preds_and_labels(
-    tokenizer, start_logits, end_logits, input_ids,
+    start_logits, end_logits, input_ids,
     seq_ids, start_pos=None, end_pos=None,
-    n_best=20, max_answer_len=50, inference=True,
+    n_best=20, max_answer_len=50, tokenizer=True
 ):
     assert (
         isinstance(n_best, int)
@@ -40,7 +40,7 @@ def retrieve_preds_and_labels(
 
     return (final_decoded_preds,)
 
-def postprocess(batch, output, tokenizer, **kwargs):
+def postprocess(batch, output, tokenizer=True, **kwargs):
     b_size = batch["input_ids"].size(0)
     mapfunc = partial(retrieve_preds_and_labels, tokenizer=tokenizer, **kwargs)
 
@@ -73,4 +73,4 @@ def predict_answer(model, tokenizer, question, context, device):
             attention_mask=inputs["attention_mask"].to(device),
         )
 
-    return postprocess(inputs, inference_output, tokenizer)[0]
+    return postprocess(inputs, inference_output, tokenizer=tokenizer)[0]
