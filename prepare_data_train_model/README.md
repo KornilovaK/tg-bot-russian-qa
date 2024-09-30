@@ -19,7 +19,7 @@
 * [Eka-Korn/t5-qa-tuned-lora_1.75](https://huggingface.co/Eka-Korn/t5-squad-tuned-lora_0.96)
 * Dataset: qa_russian
 * EPOCHS = 10
-* Lora trainable params: 0.967%
+* Lora trainable params: 1.757%
 * Evaluation metrics: 
 * * F1: 0.6206880295433619
 * * METEOR: 0.7099260392379655
