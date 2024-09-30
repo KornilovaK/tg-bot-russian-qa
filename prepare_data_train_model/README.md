@@ -11,16 +11,16 @@
 * EPOCHS ~ 15
 * Lora trainable params: 1.001%
 * Evaluation metrics: 
-* * F1: 0.723
+* * F1: 0.7232768099092667
 * * SAS: 0.8044405
 * * METEOR: 0.6431945091247689
 
 ### 2. T5
-* [Eka-Korn/t5-qa-tuned-lora_1.75](https://huggingface.co/Eka-Korn/t5-squad-tuned-lora_0.96)
+* [Eka-Korn/t5-qa-tuned-lora_1.75](https://huggingface.co/Eka-Korn/t5-qa-tuned-lora_1.75)
 * Dataset: qa_russian
-* EPOCHS = 10
+* EPOCHS ~ 6
 * Lora trainable params: 1.757%
 * Evaluation metrics: 
-* * F1: 0.6206880295433619
-* * METEOR: 0.7099260392379655
-* * SAS: 0.713245689868927
+* * F1: 0.6846462845943829
+* * SAS: 0.7555522322654724
+* * METEOR: 0.7666797829362197
