@@ -11,6 +11,6 @@ services:
       - HOST=0.0.0.0
       - PORT=5001
       - MODEL_PATH=Eka-Korn/distillbert-qa-tuned-lora_1.01_v2
-      - BOT_TOKEN=7502004908:AAEMorcIXF31RgIce3OtGWa04CuaH1AWcFQ
+      - BOT_TOKEN=<PLACE HERE>
     ports:
       - 5001:5001
